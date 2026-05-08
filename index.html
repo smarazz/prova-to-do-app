@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Todo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Todo</h1>
+      <span id="date"></span>
+    </header>
+
+    <form id="todo-form">
+      <input
+        type="text"
+        id="todo-input"
+        placeholder="Aggiungi un'attività..."
+        autocomplete="off"
+        maxlength="120"
+      />
+      <button type="submit" aria-label="Aggiungi">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+        </svg>
+      </button>
+    </form>
+
+    <div class="filters">
+      <button class="filter active" data-filter="all">Tutte</button>
+      <button class="filter" data-filter="active">Attive</button>
+      <button class="filter" data-filter="done">Completate</button>
+    </div>
+
+    <ul id="todo-list"></ul>
+
+    <footer id="footer" hidden>
+      <span id="count"></span>
+      <button id="clear-done">Elimina completate</button>
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
