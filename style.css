@@ -1,17 +1,17 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #0f0f13;
-  --surface: #1a1a24;
-  --border: #2a2a38;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --border: #e9ecef;
   --accent: #7c6af7;
-  --accent-dim: #3d3480;
-  --text: #e8e8f0;
-  --muted: #6b6b85;
-  --done-color: #3a3a50;
-  --red: #f76a6a;
+  --accent-dim: #f0eeff;
+  --text: #212529;
+  --muted: #6c757d;
+  --done-color: #f1f3f5;
+  --red: #fa5252;
   --radius: 14px;
-  --shadow: 0 4px 24px rgba(0,0,0,.45);
+  --shadow: 0 4px 24px rgba(0,0,0,.08);
 }
 
 body {
@@ -43,9 +43,22 @@ h1 {
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -.5px;
-  background: linear-gradient(135deg, #fff 0%, var(--accent) 100%);
+  background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+}
+
+#clock {
+  font-weight: 600;
+  color: var(--text);
+  font-size: 1.1rem;
 }
 
 #date {

@@ -6,13 +6,23 @@ const countEl = document.getElementById('count');
 const clearBtn = document.getElementById('clear-done');
 const filterBtns = document.querySelectorAll('.filter');
 const dateEl = document.getElementById('date');
+const clockEl = document.getElementById('clock');
 
 let todos = JSON.parse(localStorage.getItem('todos') || '[]');
 let filter = 'all';
 
-dateEl.textContent = new Date().toLocaleDateString('it-IT', {
-  weekday: 'long', day: 'numeric', month: 'long'
-});
+function updateTime() {
+  const now = new Date();
+  dateEl.textContent = now.toLocaleDateString('it-IT', {
+    weekday: 'long', day: 'numeric', month: 'long'
+  });
+  clockEl.textContent = now.toLocaleTimeString('it-IT', {
+    hour: '2-digit', minute: '2-digit', second: '2-digit'
+  });
+}
+
+setInterval(updateTime, 1000);
+updateTime();
 
 function save() {
   localStorage.setItem('todos', JSON.stringify(todos));
